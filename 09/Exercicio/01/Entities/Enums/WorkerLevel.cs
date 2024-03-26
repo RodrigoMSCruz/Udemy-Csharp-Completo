@@ -1,4 +1,4 @@
-﻿namespace Course.Entities.Enums
+﻿namespace 09.Exercicio.01.Entities.Enums
 {
     enum WorkerLevel : int
     {

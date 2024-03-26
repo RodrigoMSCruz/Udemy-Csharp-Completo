@@ -1,4 +1,4 @@
-namespace 09.Exemplo.01
+namespace 09.Exemplo.01.Entities.Enuns
 {
     public enum OrderStatus : int
     {
