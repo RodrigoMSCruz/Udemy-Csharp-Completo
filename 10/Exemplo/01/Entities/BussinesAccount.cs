@@ -8,25 +8,25 @@ namespace 10.Exemplo.01.Entities
     public class BussinesAccount : Account
     {
         public double LoanLimit { get; set;}
-    }
+    
 
-    public BussinesAccount()
-    {
-
-    }
-
-    public BussinesAccount(int number, string holder, double balance, double loanLimit) : base(number, holder, balance)
-    {
-        loanLimit = loanLimit;
-    }
-
-    public void Loan(double amount)
-    {
-        if (amount <= LoanLimit)
+        public BussinesAccount()
         {
-            Balance += amount;
-        }
-        
-    }
 
+        }
+
+        public BussinesAccount(int number, string holder, double balance, double loanLimit) : base(number, holder, balance)
+        {
+            loanLimitan = loanLimit;
+        }
+
+        public void Loan(double amount)
+        {
+            if (amount <= LoanLimit)
+            {
+                Balance += amount;
+            }
+            
+        }
+    } 
 }
