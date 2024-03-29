@@ -16,7 +16,7 @@ namespace 09.Exercicio.01.Entities
             Console.Write("Name: ");
             string name = Console.ReadLine();
             Console.Write("Level: (Junior/MidLevel/Senior): ");
-            WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
+            WorkerLevel level = Enum.Parse<WorkerLevel>( Console.ReadLine() );
             Console.Write("Base salary: ");
             double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
@@ -35,6 +35,7 @@ namespace 09.Exercicio.01.Entities
                 double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 Console.Write("Duration (hours): ");
                 int hours = int.Parse(Console.ReadLine());
+                
                 HourContract contract = new HourContract(date, valuePerHour, hours);
                 worker.AddContract(contract);
             }
