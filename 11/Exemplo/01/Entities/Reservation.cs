@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using 11.Exemplo.01.Entities.Exceptions
 
 namespace 11.Exemplo.01.Entities
 {
@@ -18,6 +16,11 @@ namespace 11.Exemplo.01.Entities
 
     public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
     {
+        if (checkOut <= checkIn)
+        {
+            throw new DomainException( "Check-out date must be after check-in" )
+        }
+        
         RoomNumber = roomNumber;
         CheckIn = checkIn;
         CheckOut = checkOut;
@@ -31,8 +34,19 @@ namespace 11.Exemplo.01.Entities
 
     public void UpdateDates(DateTime checkIn, DateTime checkOut)
     {
+        DateTime now = DateTime Now;
+        if(checkIn < now || checkOut < now)
+        {
+            throw new DomainException( "Reservation dates for update must be future date" );
+        }
+        if (checkOut <= checkIn)
+        {
+            throw new DomainException( "Error in reservation: Check-out date must " );
+        }
+
         CheckIn = checkIn;
         CheckOut = checkOut;
+
     }
     public override string ToString()
     {
