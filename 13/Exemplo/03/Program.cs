@@ -5,13 +5,16 @@ namespace 13.Exemplo.03
 {
     public class Program
     {
-        string path = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/03/File1.txt";
-        using (FileStream fs = new FileStream(path, FileMode.Open;) )
+        static void Main(string[] arg)
         {
-            using (StreamReader sr = new StreamReader(fs) )
+            string path = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/03/File1.txt";
+            using (FileStream fs = new FileStream(path, FileMode.Open;) )
             {
-                string line = sr.ReadLine();
-                Console.WriteLine(line);
+                using (StreamReader sr = new StreamReader(fs) )
+                {
+                    string line = sr.ReadLine();
+                    Console.WriteLine(line);
+                }
             }
         }
     }

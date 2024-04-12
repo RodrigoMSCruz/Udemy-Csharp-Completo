@@ -5,24 +5,27 @@ namespace 13.Exemplo.04
 {
     public class Program
     {
-        string sourcePath = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/04/File1.txt";
-        string targetPath = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/04/File2.txt";
-
-        try
+        static void Main(string[] arg)
         {
-            string[] lines = File.ReadAllLines(sourcePath);
-            using (StreamWriter sw = File.AppendText(targetPath) )
+            string sourcePath = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/04/File1.txt";
+            string targetPath = @"Macintosh HD/@Home/@Rodrigo/Education/29-Udemy-CSharp/Repository/13/Exemplo/04/File2.txt";
+
+            try
             {
-                foreach (string line in lines)
+                string[] lines = File.ReadAllLines(sourcePath);
+                using (StreamWriter sw = File.AppendText(targetPath) )
                 {
-                    sw.WriteLine(line.ToUpper() );
+                    foreach (string line in lines)
+                    {
+                        sw.WriteLine(line.ToUpper() );
+                    }
                 }
             }
-        }
-        catch(IOExpression e)
-        {
-            Console.WriteLine("An error occurred");
-            Console.WriteLine(e.Message);
+            catch(IOExpression e)
+            {
+                Console.WriteLine("An error occurred");
+                Console.WriteLine(e.Message);
+            }
         }
     }
 
